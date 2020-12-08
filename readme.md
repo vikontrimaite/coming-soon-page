@@ -1,6 +1,6 @@
 # Coming soon
 
-Site published at https://vikontrimaite.github.io/paskaitos-BIT/9%20coming-soon-page/
+Site published [here](https://vikontrimaite.github.io/coming-soon-page/index.html)
 
 Design: [Sign up]()
 
