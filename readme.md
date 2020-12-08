@@ -6,12 +6,17 @@ Design: [Sign up]()
 
 
 ## Project features
-- jė
+* responsive design
+* repetitive content is generated/rendered;
+* css animations
+* form validations
+* no AJAX (data sending)
 
 ## Authors
 [Vilija Kontrimaitė](https://github.com/vikontrimaite)
 
 
+### Master plan
 ## Ka ir kaip ketiname daryti?
 
 * [x] paanalizuoti paveiksliuka/dizaina;
