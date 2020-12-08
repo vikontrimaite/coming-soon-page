@@ -1,0 +1,71 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 200px 600px 200px 1fr;
+    padding: 40px 0;
+    border: green 3px solid;
+}
+    .container > .row-short {
+        grid-column: 3/4;
+        /* nėra rows, taigi reškia: užimk visą eilutę nuo 3 iki 4 stulpelio */
+        background-color: lawngreen;
+    }
+    .container > .row-long {
+        grid-column: 2/5;
+        background-color: gold;
+    }
+        .container > .row-long.columns {
+            display: grid;
+            grid-template-columns: 5fr 1fr 4fr;
+        }
+            .container > .row-long.columns > .left {
+                grid-column: 1/2;
+            }
+            .container > .row-long.columns > .right {
+                grid-column: 3/4;
+            }
+
+@media (max-width: 1100px) {
+    .container {
+        grid-template-columns: 1fr 100px 600px 100px 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr 600px 1fr;
+    }
+        .container > .row-short {
+            grid-column: 2/3;
+        }
+        .container > .row-long {
+            grid-column: 2/3;
+        }
+}
+
+@media (max-width: 640px) {
+    .container {
+        grid-template-columns: 20px 1fr 20px;
+    }
+        .container > .row-long.columns {
+            grid-template-columns: 1fr;
+        }
+            .container > .row-long.columns > .right {
+                grid-column: 1/2;
+            }
+}
+
+/* grid-column: 3/4; - tarp 3 ir 4 linijų */
+
+/* grid-template-columns: 1fr 1fr 1fr; - taip visi stulpeliai tampa vienodo dydžio */
+
+/* @media - responsive design ant grido darant overridinimą. keičiasi stulpelių kiekis į kiek yra sudėtas turinys */
+
+/*  @media (max-width: 640px) {
+    .container {
+        grid-template-columns: 20px 1fr 20px;
+                ant mobile reikia palikti tarpą iš šonų, pvz, 20px */
