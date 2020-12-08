@@ -27,6 +27,7 @@ body {
             }
             .container > .row-long.columns > .right {
                 grid-column: 3/4;
+                background-color: hotpink;
             }
 
 @media (max-width: 1100px) {
