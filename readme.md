@@ -2,8 +2,6 @@
 
 Site published [here](https://vikontrimaite.github.io/coming-soon-page/index.html)
 
-Design: [Sign up]()
-
 
 ## Project features
 * responsive design
@@ -15,9 +13,9 @@ Design: [Sign up]()
 ## Authors
 [Vilija Kontrimaitė](https://github.com/vikontrimaite)
 
-
-### Master plan
-## Ka ir kaip ketiname daryti?
+# ++++++++
+## Master plan
+### Ka ir kaip ketiname daryti?
 
 * [x] paanalizuoti paveiksliuka/dizaina;
 * [x] pasiruosti basic failus;
