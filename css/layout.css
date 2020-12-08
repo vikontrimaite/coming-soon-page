@@ -6,12 +6,15 @@ body {
 .container {
     display: grid;
     grid-template-columns: 1fr 200px 600px 200px 1fr;
+    /* grid'as savyje gali turėti kitų gridų'ų (grid'o cell'ė) */
+    /* grid-template-columns: 1fr 1fr 1fr; - taip visi stulpeliai tampa vienodo dydžio */
     padding: 40px 0;
     border: green 3px solid;
 }
     .container > .row-short {
         grid-column: 3/4;
         /* nėra rows, taigi reškia: užimk visą eilutę nuo 3 iki 4 stulpelio */
+        /* tarp 3 ir 4 linijų */
         background-color: lawngreen;
     }
     .container > .row-long {
@@ -19,26 +22,29 @@ body {
         background-color: gold;
     }
         .container > .row-long.columns {
+            /* čia row long'as su class'e columns */
             display: grid;
             grid-template-columns: 5fr 1fr 4fr;
+            /* geriau viską rašyti-konvertuoti fr, o ne % */
         }
             .container > .row-long.columns > .left {
                 grid-column: 1/2;
             }
             .container > .row-long.columns > .right {
                 grid-column: 3/4;
-                background-color: hotpink;
             }
-
+/* @media - responsive design ant grido darant overridinimą. keičiasi stulpelių kiekis į kiek yra sudėtas turinys */
 @media (max-width: 1100px) {
     .container {
         grid-template-columns: 1fr 100px 600px 100px 1fr;
+        /* čia parašoma tik tai,kas keičiasi. kas neisikeičia - nerašoma */
     }
 }
 
 @media (max-width: 900px) {
     .container {
         grid-template-columns: 1fr 600px 1fr;
+        /* kadangi tampa grid-template-columns: 1fr 0 600px 0 1fr; - o 0 neraišo, todėl keičiasi stulpelių išsidėstymas - tampa 3 stulpeliai, o ne be 5 - apačioje aprašoma, kaip pasikečiasi row-short ir row-long padėtys */
     }
         .container > .row-short {
             grid-column: 2/3;
@@ -51,6 +57,9 @@ body {
 @media (max-width: 640px) {
     .container {
         grid-template-columns: 20px 1fr 20px;
+        /* ant mobile reikia palikti tarpą iš šonų, pvz, 20px */
+        /* čia reiškia: iš šonų lieka po 20px, o per vidury - tiek, kiek lieka erdvės */
+        /* stulpelių vis dar 3, todėl nereikia iš naujo nurodyti row-short ir row-long padėčių  */
     }
         .container > .row-long.columns {
             grid-template-columns: 1fr;
@@ -59,14 +68,3 @@ body {
                 grid-column: 1/2;
             }
 }
-
-/* grid-column: 3/4; - tarp 3 ir 4 linijų */
-
-/* grid-template-columns: 1fr 1fr 1fr; - taip visi stulpeliai tampa vienodo dydžio */
-
-/* @media - responsive design ant grido darant overridinimą. keičiasi stulpelių kiekis į kiek yra sudėtas turinys */
-
-/*  @media (max-width: 640px) {
-    .container {
-        grid-template-columns: 20px 1fr 20px;
-                ant mobile reikia palikti tarpą iš šonų, pvz, 20px */
