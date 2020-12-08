@@ -1,0 +1,17 @@
+/* basic */
+.bg-main-color {
+    background-color: #03A9F3;
+}
+
+/* hero */
+div.container {
+    padding-bottom: 20px;
+    /* čia keičia tik šitam custom, nes layout'e yra bendras visiems */
+}
+
+/* main */
+
+/* footer */
+footer.container {
+    padding-top: 0;
+}
