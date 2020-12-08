@@ -9,7 +9,7 @@ body {
     /* grid'as savyje gali turėti kitų gridų'ų (grid'o cell'ė) */
     /* grid-template-columns: 1fr 1fr 1fr; - taip visi stulpeliai tampa vienodo dydžio */
     padding: 40px 0;
-    border: green 3px solid;
+    border: red 7px solid;
 }
     .container > .row-short {
         grid-column: 3/4;
