@@ -3,7 +3,8 @@
     /* pirmasisis kintamasis css'e */
     --big-gap: cald(2.5 * var(--gap));
     /* taip iškviečia var */
-    --main-color: #03A9F3
+    --main-color: #03A9F3;
+    --secondary-color: red;
 }
 
 /* tėviškiausias selector'ius, net labiau už body */
