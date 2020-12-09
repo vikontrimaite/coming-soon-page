@@ -1,12 +1,49 @@
 /* basic */
 .bg-main-color {
-    background-color: #03A9F3;
+    background-color: var(--main-color);
 }
 
 /* hero */
-div.container {
+.hero.container {
     padding-bottom: 20px;
     /* čia keičia tik šitam custom, nes layout'e yra bendras visiems */
+}
+
+.hero > .row-short {
+    text-align: center;
+}
+
+.hero. img {
+    margin-bottom: var(--big-gap);
+    height: 30px;
+}
+
+.hero h1 {
+    display: inline-block;
+    width: 100%;
+    color: black;
+    font-size: 60px;
+    line-height: 60px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: var(--gap);
+}
+
+.hero p {
+    display: inline-block;
+    width: 100%;
+    color: #444;
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: var(--big-gap);
+}
+
+.hero .clock {
+    margin-bottom: var(--big-gap);
+}
+
+.hero .form {
+    margin-bottom: var(--gap);
 }
 
 /* main */

@@ -9,17 +9,14 @@ body {
     /* grid'as savyje gali turėti kitų gridų'ų (grid'o cell'ė) */
     /* grid-template-columns: 1fr 1fr 1fr; - taip visi stulpeliai tampa vienodo dydžio */
     padding: 40px 0;
-    border: red 7px solid;
 }
     .container > .row-short {
         grid-column: 3/4;
         /* nėra rows, taigi reškia: užimk visą eilutę nuo 3 iki 4 stulpelio */
         /* tarp 3 ir 4 linijų */
-        background-color: lawngreen;
     }
     .container > .row-long {
         grid-column: 2/5;
-        background-color: gold;
     }
         .container > .row-long.columns {
             /* čia row long'as su class'e columns */
