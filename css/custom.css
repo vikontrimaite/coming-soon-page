@@ -9,8 +9,8 @@
     /* čia keičia tik šitam custom, nes layout'e yra bendras visiems */
     background-image: url(../img/background.jpg);
     background-size: cover;
-    background-position: center bottom;
-
+    background-position: center;
+    height: 100vh;
 }
 
 .hero > .row-short {

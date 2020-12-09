@@ -1,7 +1,7 @@
 :root {
     --gap: 20px;
     /* pirmasisis kintamasis css'e */
-    --big-gap: cald(2.5 * var(--gap));
+    --big-gap: calc(2.5 * var(--gap));
     /* taip iškviečia var */
     --main-color: #03A9F3;
     --secondary-color: red;
