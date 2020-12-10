@@ -10,7 +10,7 @@
     background-image: url(../img/background.jpg);
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .hero > .row-short {
@@ -78,4 +78,74 @@ main p > a:hover {
 /* footer */
 footer.container {
     padding-top: 0;
+    text-align: center;
+}
+footer > .row-long {
+    padding: 10px 0;
+    border-bottom: white 1px solid;
+    margin-bottom: 20px;
+}
+
+footer .fa {
+    color: white;
+    font-size: 18px;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+footer .fa:hover {
+    background-color: white;
+    color: var(--main-color);
+}
+
+footer p a {
+    color: white;
+    text-decoration: none;
+}
+
+footer img {
+    margin-bottom: 20px;
+    height: 40px;
+}
+
+footer p {
+    display: inline-block;
+    width: 100%;
+    font-size: 17px;
+    line-height: 29px;
+    color: #fff9;
+}
+
+footer p > span {
+    padding: 0 10px;
+    position: relative;
+}
+
+footer p > span + span::before {
+    content: '';
+    display: inline-block;
+    height: 15px;
+    width: 1px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: -2px;
+    transform: translateY(-50%);
+    /* kuriamas pseudo elementas, kuris neegzituoja tml, sukuriamas css, bet elgiasi tarsi html elementas --- pagaliukai */
+}
+/* span + span -> paima antrąjį iš eilės einantį span; ir tada trečią, nes jis yra antras nuo antro, ždž, iš esmės neima pirmo */
+
+@media (max-width: 640px) {
+    footer p > span {
+        width: 100%;
+        display: inline-block;
+    }
+
+    footer p > span + span::before {
+        display: none;
+    }
 }
