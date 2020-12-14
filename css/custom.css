@@ -29,7 +29,7 @@
     font-size: 60px;
     line-height: 60px;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 900;
     margin-bottom: var(--gap);
 }
 
@@ -37,7 +37,7 @@
     display: inline-block;
     width: 100%;
     color: #444;
-    font-size: 20px;
+    font-size: 21px;
     line-height: 25px;
     margin-bottom: var(--big-gap);
 }
@@ -99,8 +99,8 @@ footer .fa {
 footer .fa:hover {
     background-color: white;
     color: var(--main-color);
+    text-align: center;
 }
-text-align: center;
 
 footer p a {
     color: white;
