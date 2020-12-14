@@ -2,6 +2,7 @@
 
 Site published [here](https://vikontrimaite.github.io/coming-soon-page/index.html)
 
+Design [here](http://trendytheme.net/demo/materialcomingsoon/)
 
 ## Project features
 * responsive design
