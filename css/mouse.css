@@ -1,0 +1,41 @@
+.mouse {
+    display: inline-block;
+    width: 25px;
+    height: 38px;
+    border: 2px solid white;
+    border-radius: 80px;
+}
+
+.mouse > .wheel {
+    display: inline-block;
+    width: 5px;
+    height: 10px;
+    background-color: white;
+    margin-top: 5px;
+    border-radius: 50px;
+    animation-name: scrolling;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes scrolling {
+    0% {
+        background-color: var(--main-color);
+        margin-top: 5px;
+        opacity: 1;
+    }
+    100% {
+        margin-top: 25px;
+        opacity: 0;
+    }
+}
+/* @keyframes - kaip keiciasi savybes laike 
+% - tai laikas, laike. 0% - pradzia, 100% - pabaiga*/
+
+/* idejos:
+0% {transform: rotate(0) }-> 100% {transform: rotate(720deg) } sukasi ; 
+
+background-image + background-size: contain - paveiksliukas telpa elemente
+
+animation-play-state: paused - sustabdo animacija ja palietus
+*/
