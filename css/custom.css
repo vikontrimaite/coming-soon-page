@@ -17,9 +17,9 @@
     text-align: center;
 }
 
-.hero. img {
+.hero img {
     margin-bottom: var(--big-gap);
-    height: 30px;
+    /* height: 30px; */
 }
 
 .hero h1 {
