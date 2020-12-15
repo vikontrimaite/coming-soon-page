@@ -74,46 +74,6 @@ main p > a:hover {
     text-decoration: underline;
 }
 
-.progress-bar.bar-1 > .bottom > .progress {
-    width: 90%;
-    animation-name: loading-1;
-}
-.progress-bar.bar-2 > .bottom > .progress {
-    width: 50%;
-    animation-name: loading-2;
-}
-.progress-bar.bar-3 > .bottom > .progress {
-    width: 65%;
-    animation-name: loading-3;
-}
-
-@keyframes loading-1 {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 90%;
-    }
-}
-
-@keyframes loading-2 {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 50%;
-    }
-}
-
-@keyframes loading-3 {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 65%;
-    }
-}
-
 /* footer */
 footer.container {
     padding-top: 0;
