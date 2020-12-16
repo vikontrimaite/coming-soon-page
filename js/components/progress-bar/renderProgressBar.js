@@ -1,28 +1,25 @@
 function renderProgressBar(selector, data) {
     // generuojame turini
     let HTML = '';
-    
     for (let i = 0; i < data.length; i++) {
         const bar = data[i];
         HTML += `<div class="progress-bar">
-        <div class="top">
-            <div class="label">${bar.title}</div>
-            <div class="value">${bar.value}</div>
-        </div>
-        <div class="bottom">
-            <div class="progress" style="width: 90%;">
-                <div class="bar"></div>
-            </div>
-        </div>
-        </div>`;
+                    <div class="top">
+                        <div class="label">${bar.title}</div>
+                        <div class="value">${bar.value}%</div>
+                    </div>
+                    <div class="bottom">
+                        <div class="progress" style="width: ${bar.value}%;">
+                            <div class="bar"></div>
+                        </div>
+                    </div>
+                </div>`;
     }
-    console.log(HTML);
 
-    // rasti vieta, kur padeti turinti
-    const D0M = document.querySelector(selector);
-     
-    // atnaujinti turini
+    // randame vieta, kur reikes padeti turini
+    const DOM = document.querySelector(selector);
     DOM.innerHTML += HTML;
+
 }
 
-export { renderProgressBar };
+export { renderProgressBar }
