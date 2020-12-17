@@ -9,7 +9,8 @@ const socialsData = [
     },
     {
         href: '#',
-        icon: 'dribble',
+        icon: 'bath',
+        // nes dribble kazkodel neveikia
     },
     {
         href: '#',
