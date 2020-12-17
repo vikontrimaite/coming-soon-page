@@ -7,28 +7,25 @@ function renderProgressBar(selector, data) {
         return false;
     }
 
-        // tikriname, kad DOM nera null
+    // tikriname, kad DOM nera null
     // null - pasakau, ka grazinti, bet ne tai grazina, o undefined - kai nieko nepasakau, ka grazinti
-    // cia tikriname, o ne gale, kad iskart butu aisku, ar yra tinkame vieta, kur reiks padeti duomenis
+    // cia tikriname, o ne gale, kad iskart butu aisku, ar yra tinkama vieta, kur reiks padeti duomenis
+    // to sum up, kas cia vyksta: kintamsis DOM yra = iesko HTML faile (document) elemento, kuris atitinka paklausima, siuo atveju - selector'iu (kuris main.js yra .left +beje+ su if tikrinama, kad jeigu nerado DOM, tai grazina false ir funkcija yra nebetesiama)
     const DOM = document.querySelector(selector);
-    if (!DOM) {
-        console.log('Nerasta vieta');
-        return false;
-    }
+    if (!DOM) return false;
 
     // generuojame turini
     let HTML = '';
 
     for (let i = 0; i < data.length; i++) {
 
+        // cia bar - tai progress bar sutrumpinimas
         const bar = data[i];
 
         if (!isValidProgressBar(bar)) {
             continue;
             // continue - nes ciklo dalis; false butu tik rezultatas
         }
-
-        
 
         HTML += `<div class="progress-bar">
                     <div class="top">

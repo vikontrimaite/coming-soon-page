@@ -1,5 +1,6 @@
 function isValidProgressBar(bar) {
-            // bar validate
+            // bar validation
+            //typeof tikrina, kad bar butu objektas {}, o Array.isArray - kad nebutu array'jus []
         if (typeof bar !== 'object' || bar === null || Array.isArray(bar)) {
             return false;
         }
@@ -9,7 +10,7 @@ function isValidProgressBar(bar) {
             return false;
         }
 
-        // jeigu 0, tinka, bet nerodo, taigi
+        // 0 tinka, turi buti skaicius nuo 0 iki 100
         if (typeof bar.value !== 'number' || bar.value < 0 || bar.value > 100) {
             return false;
         }

@@ -10,7 +10,11 @@ const progressBarData = [
     {
         title: 'Web development',
         value: 60
-    }
+    },
+    {
+        title: 'Something else',
+        value: 45
+    },
 ];
 
 export { progressBarData }
