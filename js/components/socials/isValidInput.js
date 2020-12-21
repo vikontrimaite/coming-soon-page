@@ -1,9 +1,10 @@
-function isValidInput(selector, data) {
-    // selector - tekstas
-    // selector - ne tuscias
-    // data - Array
-    // data - ne tuscias array
-
+function isValidInput (selector, data) {
+    if (typeof selector !== 'string' || selector === '' || selector.length > 100) {
+        return false;
+    }
+    if (!Array.isArray(data) || data.length === 0) {
+        return false; 
+    }
 
     return true;
 }

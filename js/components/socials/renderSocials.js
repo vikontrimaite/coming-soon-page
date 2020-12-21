@@ -5,8 +5,9 @@ function renderSocials(selector, data) {
     // input validation
     if (!isValidInput(selector, data)) return false;
 
-    const DOM = document.querySelector(selector);
-    if (!DOM) return false;
+    const selectorPlace = document.querySelector(selector);
+
+    if (!selectorPlace) return false;
 
     // logic 
     let newHTML = '';
@@ -23,7 +24,7 @@ function renderSocials(selector, data) {
     if (newHTML === '') return false;
 
     // return result
-    DOM.innerHTML = newHTML;
+    selectorPlace.innerHTML = newHTML;
 
     return true;
 }
