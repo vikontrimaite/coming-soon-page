@@ -55,6 +55,25 @@ class Clock {
         this.DOMseconds = value[3];
     }
 
+    start() {
+        
+        const jubiliejausMiliseconds = (new Date(this.dataString)).getTime();
+
+        setInterval(() => {
+            const now = new Date();
+            const diff = jubiliejausMiliseconds - now;
+
+            let secondsLeft = 
+            this.DOMdays.innerText = Math.floor(secondsLeft / 60 / 60 / 24);
+            this.DOMhour.innerText =  
+            this.DOMminutes.innerText =  
+            this.DOMseconds.innerText =  
+
+
+        
+            console.log(`tick tick...`);
+        }, 1000); // miliseconds
+    }
 }
 
 export { Clock }

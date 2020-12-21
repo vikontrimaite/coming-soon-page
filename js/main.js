@@ -10,6 +10,7 @@ const clock = new Clock('.hero', '.clock');
 if (clock.isValidSelector) {
     if (!clock.arBusMetines()) {
         clock.atnaujintiInformacija();
+        clock.start();
     }
 }
 
