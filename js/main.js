@@ -6,7 +6,12 @@ import { renderProgressBar } from "./components/progress-bar/renderProgressBar.j
 import { socialsData } from './data/socialsData.js';
 import { renderSocials } from './components/socials/renderSocials.js';
 
-new Clock();
+const clock = new Clock('.hero', '.clock');
+if (clock.isValidSelector) {
+    if (!clock.arBusMetines()) {
+        clock.atnaujintiInformacija();
+    }
+}
 
 renderProgressBar('.left', progressBarData);
 
