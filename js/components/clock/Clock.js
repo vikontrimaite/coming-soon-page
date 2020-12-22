@@ -1,46 +1,56 @@
 class Clock {
-    constructor() {
-        // 2021-04-29 10:00
-        this.now = Date.now();
-
+    // TODO: isplesti iki galimybes nurodyti custom data, iki kada skaiciuoja likusi laika
+    constructor(selector, date) {
+        this.selector = selector;
         this.deadline = {
             year: (new Date()).getFullYear(),
-            month: 4 + 1,
-            day: 29,
+            month: 11,
+            day: 16,
             hour: 10,
             minutes: 0,
             seconds: 0
         }
-        // this.dataString = '2020-11-26 10:00:00'
-        this.dataString = this.createDataString();
+        this.dateString = this.createDateString();
         this.DOM = null;
         this.DOMdays = null;
         this.DOMhour = null;
         this.DOMminutes = null;
         this.DOMseconds = null;
     }
-    createDataString() {
-        // this.dataString = `${this.deadline.year}-${this.deadline.month}-${this.deadline.day} ${this.deadline.hour}${this.deadline.minutes}${this.deadline.seconds}`;
 
-        // kitas variantas - tokiu budu is kiekvieno objekto dalyko padaro po nauja kintamaji pvz const year, const month ir t.t.
-        const {year, month, day, hour, minutes, seconds} = this.deadline;
+    init() {
+        if (this.isValidSelector()) {
+            this.findClockValueElements();
+            if (!this.arBusMetines()) {
+                this.atnaujintiInformacija();
+            }
+            this.start();
+        }
+    }
+
+    createDateString() {
+        const { year, month, day, hour, minutes, seconds } = this.deadline;
         return `${year}-${month}-${day} ${hour}:${minutes}:${seconds}`;
     }
 
     arBusMetines() {
         const jubiliejausMiliseconds = (new Date(this.dateString)).getTime();
-        return this.now < jubiliejausMiliseconds;
+        return Date.now() < jubiliejausMiliseconds;
     }
 
     atnaujintiInformacija() {
+        /*
+        kadangi, pagal dabartinius metus, metines yra praeityje,
+        tai reikia atnaujinti metus ir is naujo viska perskaiciuoti
+        */
         this.deadline.year++;
-        this.dateString = this.createDataString();
+        this.dateString = this.createDateString();
     }
 
     isValidSelector() {
         const DOM = document.querySelector(this.selector);
         if (!DOM) {
-            console.log('Error: bad selector');
+            console.error('ERROR: blogas selectorius.')
             return false;
         }
         this.DOM = DOM;
@@ -48,31 +58,44 @@ class Clock {
     }
 
     findClockValueElements() {
-        const value = this.DOM.querySelectorsAll('.value');
-        this.DOMdays = value[0];
-        this.DOMhour = value[1];
-        this.DOMminutes = value[2];
-        this.DOMseconds = value[3];
+        const values = this.DOM.querySelectorAll('.value');
+        this.DOMdays = values[0];
+        this.DOMhour = values[1];
+        this.DOMminutes = values[2];
+        this.DOMseconds = values[3];
     }
 
     start() {
-        
-        const jubiliejausMiliseconds = (new Date(this.dataString)).getTime();
-
+        let jubiliejausMiliseconds = (new Date(this.dateString)).getTime();
         setInterval(() => {
-            const now = new Date();
-            const diff = jubiliejausMiliseconds - now;
+            const now = Date.now();
+            let diff = jubiliejausMiliseconds - now;
+            if (diff < 0) {
+                this.atnaujintiInformacija();
+                jubiliejausMiliseconds = (new Date(this.dateString)).getTime();
+                diff = jubiliejausMiliseconds - now;
+            }
 
-            let secondsLeft = 
-            this.DOMdays.innerText = Math.floor(secondsLeft / 60 / 60 / 24);
-            this.DOMhour.innerText =  
-            this.DOMminutes.innerText =  
-            this.DOMseconds.innerText =  
+            let secondsLeft = Math.floor(diff / 1000);
+            const days = Math.floor(secondsLeft / 60 / 60 / 24);
 
+            secondsLeft -= days * 60 * 60 * 24;
+            const hours = Math.floor(secondsLeft / 60 / 60);
 
-        
-            console.log(`tick tick...`);
-        }, 1000); // miliseconds
+            secondsLeft -= hours * 60 * 60;
+            const minutes = Math.floor(secondsLeft / 60);
+
+            const seconds = secondsLeft - minutes * 60;
+
+            this.DOMdays.innerText = days;
+            this.DOMhour.innerText = this.formarNumber(hours);
+            this.DOMminutes.innerText = this.formarNumber(minutes);
+            this.DOMseconds.innerText = this.formarNumber(seconds);
+        }, 1000);   // miliseconds
+    }
+
+    formarNumber(number) {
+        return number < 10 ? '0' + number : number;
     }
 }
 
